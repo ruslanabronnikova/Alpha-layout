@@ -85,6 +85,28 @@
     font-weight: 500;
     margin-bottom: 3px;
   }
+
+  .image__banner {
+    max-width: 1000px;
+  }
+
+  @media (max-width: 998px) {
+    .image__banner {
+      max-width: 550px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .image__banner {
+      max-width: 400px;
+    }
+  }
+
+  @media (max-width: 550px) {
+    .image__banner {
+      max-width: 320px;
+    }
+  }
 </style>
 
 <body>
@@ -192,7 +214,7 @@
           </nav>
 
           <h2 style="max-width: 500px;">Подарок за достижение Ранга в компании ALPHA ACHIEVERS</h2>
-          <img class="mt-3" src="./images/banner2.jpg" style="max-width: 1000px;">
+          <img class="mt-3 image__banner" src="./images/banner2.jpg">
           <p style="max-width: 800px; margin-top: 50px; font-size: 20px;">За Вашу блистательную работу нашего первого
             месяца мы решили подарить Вам нашу новинку – “Крем для лица и тела с экстрактом чистотела”.<br>
             * подарок будет Вам отправлен в ближайшем Вашем заказе.</p>
