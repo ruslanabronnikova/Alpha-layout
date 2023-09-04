@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.1/nouislider.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Интернет-маганзин</title>
+</head>
+
+<style>
+  .container-products {
+    position: relative;
+    padding: 100px 0px 60px;
+  }
+
+  .sidebar_search {
+    height: 54px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .sidebar_search input {
+    width: 100%;
+    height: 54px;
+    border: none;
+    border: 1px solid #f1f1f1;
+    padding: 0 56px 0 12px;
+    color: #9e9e9e;
+  }
+
+  .sidebar_search button {
+    width: 54px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    border: none;
+    background-color: #000;
+  }
+
+  .sidebar_categories ul {
+    margin-top: 22px;
+    margin-bottom: 46px;
+    padding: 0;
+  }
+
+  .sidebar_categories ul li {
+    line-height: 48px;
+    list-style: none;
+  }
+
+  .sidebar_categories ul li a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #272727;
+    position: relative;
+    padding-left: 29px;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .noUi-target {
+    background-color: black;
+    height: 2px;
+  }
+
+  .noUi-handle {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .noUi-handle:active {
+    transform: scale(1.2);
+  }
+</style>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <div class="container-products">
+    <div class="container">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Библиотека</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 sidebar_styleTwo">
+          <!-- sidebar_search -->
+          <div class="wrapper">
+            <div class="sidebar_search">
+              <form action="#">
+                <input type="text" placeholder="Искать товары">
+                <button class="tran3s color1_bg">Поиск</button>
+              </form>
+            </div>
+          </div>
+          <!-- sidebar_categories -->
+          <div class="sidebar_categories">
+            <div class="theme_inner_title">
+              <h4>Категории</h4>
+            </div>
+            <ul>
+              <li><a href="" class="tran3s">Пептидный комплекс</a></li>
+            </ul>
+          </div>
+          <!-- priceSlider -->
+          <div class="mt-2">
+            <h4 class="mb-3">Цены</h4>
+            <div id="priceSlider"></div>
+            <p id="selectedPrice" class="mt-5">Цена: 7 500 ₸ — 16 000 ₸</p>
+          </div>
+        </div>
+
+        <div class="col-lg-9 col-md-8 col-sm-12 col-sx-12">
+
+          <div class="row" style="margin-bottom: 100px;">
+            <h2 class="h2" style="margin-left: 30px; margin-bottom: 30px;">Каталог продукции</h2>
+            <!--Default Item-->
+            <div class="col-md-4 col-sm-6 col-xs-12 default-item" style="display: inline-block; margin-left: 30px;">
+              <div class="card-deck">
+                <div class="card">
+                  <img src="./images//tovar1.gif" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Название карточки</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                      additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.1/nouislider.min.js"></script>
+  <script>
+    const priceSlider = document.getElementById('priceSlider');
+    const selectedPrice = document.getElementById('selectedPrice');
+
+    noUiSlider.create(priceSlider, {
+      start: [7500, 16000],
+      connect: true,
+      range: {
+        'min': 7500,
+        'max': 16000
+      }
+    });
+
+    priceSlider.noUiSlider.on('update', function (values, handle) {
+      const minPrice = values[0];
+      const maxPrice = values[1];
+      selectedPrice.textContent = `Цена: ${minPrice} - ${maxPrice}`;
+    });
+  </script>
+
+  <script>
+    $(function () {
+      $("#header-placeholder").load("header.html");
+    });
+  </script>
+
+  <script>
+    $(function () {
+      $("#footer-placeholder").load("footer.html");
+    });
+  </script>
+</body>
+
+</html>

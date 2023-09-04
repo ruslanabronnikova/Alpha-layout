@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>Блог компании</title>
+</head>
+
+<style>
+  .container-products {
+    position: relative;
+    padding: 100px 0px 60px;
+  }
+
+  .sidebar_search {
+    height: 54px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .sidebar_search input {
+    width: 100%;
+    height: 54px;
+    border: none;
+    border: 1px solid #f1f1f1;
+    padding: 0 56px 0 12px;
+    color: #9e9e9e;
+  }
+
+  .sidebar_search button {
+    width: 54px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    border: none;
+    background-color: #000;
+  }
+
+  .sidebar_categories ul {
+    margin-top: 22px;
+    margin-bottom: 46px;
+    padding: 0;
+  }
+
+  .sidebar_categories ul li {
+    line-height: 48px;
+    list-style: none;
+  }
+
+  .sidebar_categories ul li a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    color: #272727;
+    position: relative;
+    padding-left: 29px;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .recent-posts {
+    position: relative;
+    padding-top: 25px;
+  }
+
+  .title__news {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0 0 20px;
+    padding: 0 0 13px;
+    border-bottom: 2px solid;
+    margin-top: 50px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+</style>
+
+<body>
+  <div id="header-placeholder"></div>
+
+  <div class="container-products">
+    <div class="container">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Главная</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Библиотека</li>
+        </ol>
+      </nav>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 sidebar_styleTwo">
+          <!-- sidebar_search -->
+          <div class="wrapper">
+            <div class="sidebar_search">
+              <form action="#">
+                <input type="text" placeholder="Что-то потеряли?">
+                <button class="tran3s color1_bg">Поиск</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="popular_news">
+            <div class="theme_inner_title">
+              <h4 class="title__news">ТОП МЕСЯЦА</h4>
+            </div>
+
+            <div class="recent-posts">
+              <a href="/" style="text-decoration: none;">
+                <div class="card mb-3" style="max-width: 400px;">
+                  <div class="row g-0">
+                    <div class="col-md-4 d-flex align-items-center">
+                      <img src="./images/banner2.jpg" class="img-fluid rounded-center img-thumbnail" alt="..."
+                        width="150" height="150">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Заголовок карточки</h5>
+                        <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="/" style="text-decoration: none;">
+                <div class="card mb-3" style="max-width: 400px;">
+                  <div class="row g-0">
+                    <div class="col-md-4 d-flex align-items-center">
+                      <img src="./images/banner2.jpg" class="img-fluid rounded-center img-thumbnail" alt="..."
+                        width="150" height="150">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Заголовок карточки</h5>
+                        <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="/" style="text-decoration: none;">
+                <div class="card mb-3" style="max-width: 400px;">
+                  <div class="row g-0">
+                    <div class="col-md-4 d-flex align-items-center">
+                      <img src="./images/banner2.jpg" class="img-fluid rounded-center img-thumbnail" alt="..."
+                        width="150" height="150">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Заголовок карточки</h5>
+                        <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8 col-sm-12 col-sx-12">
+          <nav class="navbar navbar-expand-lg bg-body-transparet">
+            <div class="container-md" style="padding: 0; margin-bottom: 50px;">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Все</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Разное</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">Здоровье</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">О компании</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="card mb-3"
+            style="max-width: 800px; border: none; border-bottom: 1px solid #9e9e9e; border-radius: 0; padding-bottom: 20px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="./images/banner2.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Заголовок карточки</h5>
+                  <p class="card-text">Это более широкая карта с вспомогательным текстом ниже в качестве естественного
+                    перехода к дополнительному контенту. Этот контент немного длиннее.</p>
+                  <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+                  <a href="/" style="color: #000; text-decoration: none;">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3"
+            style="max-width: 800px; border: none; border-bottom: 1px solid #9e9e9e; border-radius: 0; padding-bottom: 20px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="./images/banner2.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Заголовок карточки</h5>
+                  <p class="card-text">Это более широкая карта с вспомогательным текстом ниже в качестве естественного
+                    перехода к дополнительному контенту. Этот контент немного длиннее.</p>
+                  <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+                  <a href="/" style="color: #000; text-decoration: none;">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3"
+            style="max-width: 800px; border: none; border-bottom: 1px solid #9e9e9e; border-radius: 0; padding-bottom: 20px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="./images/banner2.jpg" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Заголовок карточки</h5>
+                  <p class="card-text">Это более широкая карта с вспомогательным текстом ниже в качестве естественного
+                    перехода к дополнительному контенту. Этот контент немного длиннее.</p>
+                  <p class="card-text"><small class="text-muted">Последнее обновление 3 мин. назад</small></p>
+                  <a href="/" style="color: #000; text-decoration: none;">Подробнее</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <script>
+    $(function () {
+      $("#header-placeholder").load("header.html");
+    });
+  </script>
+
+  <script>
+    $(function () {
+      $("#footer-placeholder").load("footer.html");
+    });
+  </script>
+</body>
+
+</html>
